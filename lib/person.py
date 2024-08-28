@@ -1,5 +1,6 @@
-import ipdb
-approved_jobs = [
+#!/usr/bin/env python3
+
+APPROVED_JOBS = [
     "Admin",
     "Customer Service",
     "Human Resources",
@@ -15,30 +16,28 @@ approved_jobs = [
 ]
 
 class Person:
-    def __init__(self, name="John Doe", job="Unemployed"):
-        self._name = name
-        self._job = job
+    def __init__(self, name='J. Doe', job='Sales'):
+        self.name = name
+        self.job = job
 
-    @property
-    def name(self):
+    def get_name(self):
         return self._name
-
-    @name.setter
-    def name(self, value):
-        if isinstance(value, str) and 1 <= len(value) <= 25:
-            self._name = value.title()
+    
+    def set_name(self, name):
+        if isinstance(name, str) and 1 <= len(name) <= 25:
+            self._name = name.title()
         else:
-            print("Name must be a string between 1 and 25 characters.")
+            print("Name must be string between 1 and 25 characters.")
 
-    @property
-    def job(self):
+    name = property(get_name, set_name)
+
+    def get_job(self):
         return self._job
-
-    @job.setter
-    def job(self, value):
-        if value in approved_jobs:
-            self._job = value
+    
+    def set_job(self, job):
+        if job in APPROVED_JOBS:
+            self._job = job
         else:
-            print("Job must be in the list of approved jobs.")
+            print("Job must be in list of approved jobs.")
 
-ipdb.set_trace()
+    job = property(get_job, set_job)
