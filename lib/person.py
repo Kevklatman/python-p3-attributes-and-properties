@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+import ipdb
 
 APPROVED_JOBS = [
     "Admin",
@@ -16,4 +17,11 @@ APPROVED_JOBS = [
 ]
 
 class Person:
-    pass
+    def __init__(self, age=9):
+        self.age = age
+        print(f"Age: {self.age}")
+
+person = Person()
+print(person.age)
+
+ipdb.set_trace()
