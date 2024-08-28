@@ -12,7 +12,7 @@ APPROVED_BREEDS = [
 ]
 
 class Dog:
-    def __init__(self, name="Mutt", breed="Mutt"):
+    def __init__(self, name="dog", breed="Mutt"):
         self._name = name
         self._breed = breed
 
@@ -21,9 +21,9 @@ class Dog:
         return self._name
 
     @name.setter
-    def name(self, value):
-        if isinstance(value, str) and 1 <= len(value) <= 25:
-            self._name = value
+    def name(self, name):
+        if isinstance(name, str) and 1 <= len(name) <= 25:
+            self._name = name
         else:
             print("Name must be a string between 1 and 25 characters.")
 
@@ -32,9 +32,9 @@ class Dog:
         return self._breed
 
     @breed.setter
-    def breed(self, value):
-        if value in APPROVED_BREEDS:
-            self._breed = value
+    def breed(self, breed):
+        if breed in APPROVED_BREEDS:
+            self._breed = breed
         else:
             print("Breed must be in the list of approved breeds.")
 ipdb.set_trace()
