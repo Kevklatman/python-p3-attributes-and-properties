@@ -17,9 +17,9 @@ APPROVED_JOBS = [
 ]
 
 class Person:
-    def __init__(self, age=9):
-        self.age = age
-        print(f"Age: {self.age}")
+    def __init__(self, job):
+        self.job = job
+        print(f"Job: {self.job}")
 
 person = Person()
 print(person.age)
